@@ -88,8 +88,8 @@ public class CustomerFacade{
 //        if(p == null){
 //            throw new PersonNotFoundException("Could not delete, provided id does not exist");
 //        }
-        Address address = p.getAdress();
-        Query q = em.createQuery("SELECT p FROM Person p WHERE p.adress.id = :id");
+        Address address = c.getAddress();
+        Query q = em.createQuery("SELECT c FROM Customer c WHERE c.address.id = :id");
         q.setParameter("id", address.getId());
         
         try {
@@ -105,7 +105,7 @@ public class CustomerFacade{
         } finally {
             em.close();
         }
-        return new PersonDTO(p);
+        return new CustomerDTO(c);
     }
 
    
