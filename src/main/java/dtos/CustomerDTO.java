@@ -12,18 +12,19 @@ import entities.Customer;
  */
 public class CustomerDTO {
     private int id;
-    private String fName;
-    private String lName;
+    private String name;
     private int phone;
     private String street;
     private int zip;
     private String city;
+    private String email;
+    
     
     public CustomerDTO(Customer c) {
-        this.fName = c.getFirstName();
-        this.lName = c.getLastName();
+        this.name = c.getName();
         this.phone = c.getPhone();
         this.id = c.getId();
+        this.email = c.getEmail();
         this.street = c.getAddress().getStreet();
         this.zip = c.getAddress().getZip();
         this.city = c.getAddress().getCity();
@@ -37,20 +38,20 @@ public class CustomerDTO {
         this.id = id;
     }
 
-    public String getfName() {
-        return fName;
+    public String getName() {
+        return name;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getlName() {
-        return lName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setlName(String lName) {
-        this.lName = lName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getPhone() {
